@@ -14,6 +14,7 @@
         tools:layout_editor_absoluteY="25dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchTemplate"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="Wyszukaj szablon" />
