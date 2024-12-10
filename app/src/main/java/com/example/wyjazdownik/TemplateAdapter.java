@@ -1,7 +1,10 @@
 package com.example.wyjazdownik;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -10,6 +13,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,34 +60,8 @@ public class TemplateAdapter extends RecyclerView.Adapter<TemplateAdapter.Templa
             listName = itemView.findViewById(R.id.schemes);
         }
     }
-
-    void addNewTripList(Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("New Template");
-
-        final EditText input = new EditText(context);
-        input.setHint("Nazwa listy");
-        builder.setView(input);
-
-        builder.setPositiveButton("Dodaj", (dialog, which) -> {
-            String templateName = input.getText().toString().trim();
-            if (!templateName.isEmpty()) {
-                TripList newTripList = new TripList(templateName, new ArrayList<>());
-                triplists.add(newTripList);
-                saveTripLists();
-                notifyDataSetChanged();
-            }
-        });
-
-        builder.setNegativeButton("Anuluj", (dialog, which) -> dialog.cancel());
-        builder.show();
-    }
-
-    private void saveTripLists() {
-    }
-
-    ArrayList<TripList> loadTripLists() {
-
-        return new ArrayList<>();
+    public void  updateTripLists(List<TripList> newLists) {
+        this.triplists = newLists;
+        notifyDataSetChanged();
     }
 }
