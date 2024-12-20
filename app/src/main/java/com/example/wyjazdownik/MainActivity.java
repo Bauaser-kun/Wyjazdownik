@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -25,8 +26,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ArrayList<TripList> tripLists;
     private TemplateAdapter templateAdapter;
-    private RecyclerView recyclerView;
+    //private RecyclerView recyclerView;
     private Button addTripListButton;
+
+    private View recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         tripLists = loadTripLists();
 
         templateAdapter = new TemplateAdapter(tripLists, this::openTripListActivity);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(templateAdapter);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setAdapter(templateAdapter);
 
-        addTripListButton.setOnClickListener(v -> addNewTripList());
+        addTripListButton.setOnClickListener(v -> addNewTripList(this.getCurrentFocus()));
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void addNewTripList() {
+    public void addNewTripList(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("New Template");
 

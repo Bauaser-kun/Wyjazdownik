@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/schemes"
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -10,12 +10,12 @@
         android:text="Dodaj nowy szablon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="addItems"/>
+        android:onClick="addNewTripList"/>
 
     <ListView
         android:id="@+id/mainlist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:drawSelectorOnTop="false"/>
-</androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
 

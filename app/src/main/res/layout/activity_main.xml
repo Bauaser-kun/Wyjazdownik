@@ -11,7 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="55dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="25dp">
+        tools:layout_editor_absoluteY="25dp"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchTemplate"
@@ -25,7 +26,8 @@
         android:layout_height="649dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="81dp">
+        tools:layout_editor_absoluteY="81dp"
+        tools:ignore="MissingConstraints">
         <include layout="@layout/main_list"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
