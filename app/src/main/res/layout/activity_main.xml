@@ -9,7 +9,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/header">
+        android:id="@+id/header"
+        android:background="#F1FEFF">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Dodaj do listy"
+            android:layout_centerInParent="true"
+            android:id="@+id/inputItem"/>
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_toRightOf="@id/inputItem"
+            android:id="@+id/addItem"
+            android:layout_marginLeft="7sp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/add_item"/>
         </RelativeLayout>
     
     <ListView
